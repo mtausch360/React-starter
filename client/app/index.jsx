@@ -1,23 +1,11 @@
 import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
-import { Router, Route, browserHistory } from 'react-router'
-
-const Home = ()=>{ return <div>Home </div>; }
-
-// const Routes = ()=>{
-//   return ;
-// };
-class App extends Component {
-  render(){
-    return (<div>Hello</div>);
-  }
-}
+import { Router, Route, browserHistory } from 'react-router';
+import routes from './routes';
 
 
 ReactDOM.render(
 
-  <Router history={browserHistory}>
-    <Route path="/" component={App}/>
-  </Router>
+  <Router history={browserHistory} routes={routes}></Router>
 
   ,document.querySelector('.app-container'));

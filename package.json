@@ -1,7 +1,7 @@
 {
   "name": "React-Starter",
   "version": "1.0.0",
-  "description": "",
+  "description": "React Starter with babel, webpack, react-router, redux, and Less",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",

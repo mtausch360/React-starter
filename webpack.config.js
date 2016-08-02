@@ -1,11 +1,14 @@
 const webpack = require('webpack');
 const path = require('path');
 
-const BUILD_DIR = path.resolve(__dirname, 'client/public');
+const BUILD_DIR = path.resolve(__dirname, 'client/build');
 const APP_DIR = path.resolve(__dirname, 'client/app');
 
 const config = {
-  entry: APP_DIR + '/index.jsx',
+  entry: [
+    APP_DIR + '/index.jsx',
+    APP_DIR + '/index.less'
+  ],
   output: {
     path: BUILD_DIR,
     filename: 'bundle.js'
@@ -21,10 +24,16 @@ const config = {
       query: {
         presets: ['react', 'es2015']
       }
+    }, {
+      test: /\.less$/,
+      loader: "style!css!less",
+    }, {
+      test: /\.css$/,
+      loader: "style!css",
     }]
   },
   devServer: {
-    contentBase: './',
+    contentBase: './client',
     port: 8000
   }
 };
